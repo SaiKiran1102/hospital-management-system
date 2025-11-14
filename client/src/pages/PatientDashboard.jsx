@@ -17,7 +17,7 @@ function PatientDashboard({ user, onLogout }) {
 
   const fetchDoctors = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/doctors');
+      const response = await axios.get('https://hospital-backed-2n2z.onrender.com/api/doctors');
       setDoctors(response.data);
     } catch (error) {
       console.error('Error fetching doctors:', error);
@@ -26,7 +26,7 @@ function PatientDashboard({ user, onLogout }) {
 
   const fetchAppointments = async () => {
     try {
-      const response = await axios.get(`http://localhost:5001/api/appointments/patient/${user._id}`);
+      const response = await axios.get(`https://hospital-backed-2n2z.onrender.com/api/appointments/patient/${user._id}`);
       setAppointments(response.data);
     } catch (error) {
       console.error('Error fetching appointments:', error);
@@ -36,7 +36,7 @@ function PatientDashboard({ user, onLogout }) {
   const handleBookAppointment = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5001/api/appointments', {
+      await axios.post('https://hospital-backed-2n2z.onrender.com/api/appointments', {
         patient: user._id,
         doctor: formData.doctor,
         appointmentDate: formData.appointmentDate,
@@ -152,7 +152,7 @@ function PatientDashboard({ user, onLogout }) {
                       <td>
                         {apt.status === 'Active' && (
                           <button className="btn-cancel" onClick={async () => {
-                            await axios.patch(`http://localhost:5001/api/appointments/${apt._id}/cancel`, { cancelledBy: 'patient' });
+                            await axios.patch(`https://hospital-backed-2n2z.onrender.com/api/appointments/${apt._id}/cancel`, { cancelledBy: 'patient' });
                             fetchAppointments();
                           }}>Cancel</button>
                         )}

@@ -23,7 +23,7 @@ function Register({ onLogin }) {
         ? { name: formData.name, email: formData.email, password: formData.password, consultationFee: formData.consultationFee }
         : { firstName: formData.firstName, lastName: formData.lastName, email: formData.email, phone: formData.phone, password: formData.password, gender: formData.gender };
       
-      const response = await axios.post(`http://localhost:5001${endpoint}`, data);
+      const response = await axios.post(`https://hospital-backed-2n2z.onrender.com${endpoint}`, data);
       onLogin(response.data.user, response.data.role, response.data.token);
       navigate(`/${response.data.role}`);
     } catch (error) {

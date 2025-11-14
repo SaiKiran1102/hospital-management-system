@@ -117,7 +117,7 @@ REACT_APP_API_URL=https://hospital-backend.onrender.com
 
 Then update `client/src/services/api.js`:
 ```javascript
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+const API_URL = process.env.REACT_APP_API_URL || 'https://hospital-backed-2n2z.onrender.com/api';
 ```
 
 **Option B: Direct Update**
@@ -129,7 +129,7 @@ Update all API calls in these files to use your Render backend URL:
 - `client/src/pages/Login.jsx`
 - `client/src/pages/Register.jsx`
 
-Replace `http://localhost:5001` with `https://hospital-backend.onrender.com`
+Replace `https://hospital-backed-2n2z.onrender.com` with `https://hospital-backend.onrender.com`
 
 ---
 

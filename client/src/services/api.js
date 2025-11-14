@@ -1,8 +1,13 @@
 import axios from 'axios';
 
+// Use production URL if available, otherwise localhost
 const API_URL = process.env.REACT_APP_API_URL 
   ? `${process.env.REACT_APP_API_URL}/api`
-  : 'http://localhost:5001/api';
+  : process.env.NODE_ENV === 'production'
+  ? 'https://hospital-backed-2n2z.onrender.com/api'
+  : 'https://hospital-backed-2n2z.onrender.com/api';
+
+console.log('API URL:', API_URL); // Debug log
 
 const api = axios.create({
   baseURL: API_URL,

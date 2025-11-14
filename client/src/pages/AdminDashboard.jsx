@@ -22,7 +22,7 @@ function AdminDashboard({ user, onLogout }) {
 
   const fetchDoctors = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/doctors');
+      const response = await axios.get('https://hospital-backed-2n2z.onrender.com/api/doctors');
       setDoctors(response.data);
     } catch (error) {
       console.error('Error:', error);
@@ -31,7 +31,7 @@ function AdminDashboard({ user, onLogout }) {
 
   const fetchPatients = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/patients');
+      const response = await axios.get('https://hospital-backed-2n2z.onrender.com/api/patients');
       setPatients(response.data);
     } catch (error) {
       console.error('Error:', error);
@@ -40,7 +40,7 @@ function AdminDashboard({ user, onLogout }) {
 
   const fetchAppointments = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/appointments');
+      const response = await axios.get('https://hospital-backed-2n2z.onrender.com/api/appointments');
       setAppointments(response.data);
     } catch (error) {
       console.error('Error:', error);
@@ -49,7 +49,7 @@ function AdminDashboard({ user, onLogout }) {
 
   const fetchMessages = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/messages');
+      const response = await axios.get('https://hospital-backed-2n2z.onrender.com/api/messages');
       setMessages(response.data);
     } catch (error) {
       console.error('Error:', error);
@@ -63,7 +63,7 @@ function AdminDashboard({ user, onLogout }) {
       return;
     }
     try {
-      await axios.post('http://localhost:5001/api/doctors', {
+      await axios.post('https://hospital-backed-2n2z.onrender.com/api/doctors', {
         name: doctorForm.name,
         email: doctorForm.email,
         password: doctorForm.password,
@@ -81,7 +81,7 @@ function AdminDashboard({ user, onLogout }) {
   const handleDeleteDoctor = async (e) => {
     e.preventDefault();
     try {
-      await axios.delete(`http://localhost:5001/api/doctors/email/${deleteEmail}`);
+      await axios.delete(`https://hospital-backed-2n2z.onrender.com/api/doctors/email/${deleteEmail}`);
       setDeleteEmail('');
       fetchDoctors();
       alert('Doctor deleted successfully!');
@@ -99,10 +99,10 @@ function AdminDashboard({ user, onLogout }) {
     }
     try {
       if (activeTab === 'doctors') {
-        const response = await axios.get(`http://localhost:5001/api/doctors/search?email=${searchTerm}`);
+        const response = await axios.get(`https://hospital-backed-2n2z.onrender.com/api/doctors/search?email=${searchTerm}`);
         setDoctors(response.data);
       } else if (activeTab === 'appointments') {
-        const response = await axios.get(`http://localhost:5001/api/appointments/search/${searchTerm}`);
+        const response = await axios.get(`https://hospital-backed-2n2z.onrender.com/api/appointments/search/${searchTerm}`);
         setAppointments(response.data);
       }
     } catch (error) {

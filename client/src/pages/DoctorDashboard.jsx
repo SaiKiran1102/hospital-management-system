@@ -14,7 +14,7 @@ function DoctorDashboard({ user, onLogout }) {
 
   const fetchAppointments = async () => {
     try {
-      const response = await axios.get(`http://localhost:5001/api/appointments/doctor/${user._id}`);
+      const response = await axios.get(`https://hospital-backed-2n2z.onrender.com/api/appointments/doctor/${user._id}`);
       setAppointments(response.data);
     } catch (error) {
       console.error('Error fetching appointments:', error);
@@ -27,7 +27,7 @@ function DoctorDashboard({ user, onLogout }) {
       return;
     }
     try {
-      const response = await axios.get(`http://localhost:5001/api/appointments/search/${searchTerm}`);
+      const response = await axios.get(`https://hospital-backed-2n2z.onrender.com/api/appointments/search/${searchTerm}`);
       const filtered = response.data.filter(apt => apt.doctor._id === user._id);
       setAppointments(filtered);
     } catch (error) {
@@ -37,7 +37,7 @@ function DoctorDashboard({ user, onLogout }) {
 
   const handleCancel = async (id) => {
     try {
-      await axios.patch(`http://localhost:5001/api/appointments/${id}/cancel`, { cancelledBy: 'doctor' });
+      await axios.patch(`https://hospital-backed-2n2z.onrender.com/api/appointments/${id}/cancel`, { cancelledBy: 'doctor' });
       fetchAppointments();
     } catch (error) {
       alert('Error cancelling appointment');

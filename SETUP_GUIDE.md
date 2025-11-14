@@ -133,7 +133,7 @@ If port 5000 or 3000 is already in use:
 
 **Backend (5000):**
 - Update `server/.env`: `PORT=5001`
-- Update `client/src/pages/*.jsx`: Change all `http://localhost:5000` to `http://localhost:5001`
+- Update `client/src/pages/*.jsx`: Change all `http://localhost:5000` to `https://hospital-backed-2n2z.onrender.com`
 
 **Frontend (3000):**
 - Set environment variable: `PORT=3001 npm start`
