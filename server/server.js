@@ -9,7 +9,17 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+// CORS configuration
+const corsOptions = {
+  origin: [
+    'http://localhost:3000',
+    'https://hospital-frontend.onrender.com',
+    /\.onrender\.com$/  // Allow all Render domains
+  ],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Routes
