@@ -2,6 +2,17 @@
 
 A full-stack hospital management application built with MongoDB Atlas, Express.js, Node.js, and React.js (MERN stack) featuring a beautiful purple-to-cyan gradient design.
 
+## 🌐 Live Demo
+
+**Website:** [https://hospital-frontend-fozc.onrender.com](https://hospital-frontend-fozc.onrender.com)
+
+**Backend API:** [https://hospital-backed-2n2z.onrender.com](https://hospital-backed-2n2z.onrender.com)
+
+### 🔑 Test Credentials:
+- **Admin:** Username: `admin` | Password: `admin123`
+- **Doctor:** Name: `Ganesh` | Password: `ganesh123`
+- **Patient:** Email: `kishansmart0@gmail.com` | Password: `kishan123`
+
 ## Features
 
 - **Role-Based Authentication** (Patient, Doctor, Admin)
